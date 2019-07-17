@@ -1,30 +1,22 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-	<ThingDef Name="MeteorBase" Abstract="True">
-		<category>Building</category>
-		<soundImpactDefault>BulletImpactMetal</soundImpactDefault>
-		<selectable>true</selectable>
-		<drawerType>MapMeshAndRealTime</drawerType>
-		<leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
-		<filthLeaving>BuildingRubble</filthLeaving>
-	</ThingDef>
-
-	<ThingDef Name="BoulderBase" ParentName="MeteorBase" Abstract="True">
+	<ThingDef Name="BoulderBase" ParentName="SK_BuildingBase" Abstract="True">
 		<thingClass>Mineable</thingClass>
 		<altitudeLayer>Building</altitudeLayer>
-		<passability>PassThroughOnly</passability>
+		<passability>Standable</passability>
 		<castEdgeShadows>false</castEdgeShadows>
 		<fillPercent>0.5</fillPercent>
 		<coversFloor>true</coversFloor>
-		<pathCost>75</pathCost>
+		<pathCost>92</pathCost>
 		<neverMultiSelect>true</neverMultiSelect>
-		<filthLeaving>RockRubble</filthLeaving>
+		<filthLeaving>Filth_RubbleRock</filthLeaving>
 		<mineable>true</mineable>
 		<rotatable>false</rotatable>
 		<building>
 			<isResourceRock>true</isResourceRock>
 			<mineableNonMinedEfficiency>0.8</mineableNonMinedEfficiency>
+			<repairable>false</repairable>
 		</building>
 	</ThingDef>
 
@@ -123,7 +115,6 @@
 		<statBases>
 			<MaxHitPoints>1500</MaxHitPoints>
 		</statBases>
-		<selectable>true</selectable>
 		<description>A Meteorite mineable for Copper Ore.</description>
 		<building>
 			<mineableThing>Copper</mineableThing>
@@ -217,10 +208,10 @@
 		</building>
 		<tickerType>Normal</tickerType>
 	</ThingDef>	
-	
+
 	<ThingDef ParentName="BoulderBase">
 		<defName>BigIronBoulder</defName>
-		<label>Granite Meteorite</label>
+		<label>Big meteorite</label>
 		<graphicData>
 			<texPath>Things/Buildings/MetalMeteor</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -236,20 +227,21 @@
 			<mineableYield>240</mineableYield>
 		</building>
 	</ThingDef>
-	
+
 
 	<ThingDef>
 		<defName>MeteorIncoming</defName>
 		<label>Meteor (Incoming!)</label>
 		<thingClass>SK.Events.MeteorIncoming</thingClass>
-		<category>Skyfaller</category>
+		<category>Ethereal</category>
 		<tickerType>Normal</tickerType>
 		<graphicData>
 			<texPath>Things/Buildings/GraniteMeteor</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<shaderType>CutoutFlying</shaderType>
 		</graphicData>
-		<altitudeLayer>MetaOverlays</altitudeLayer>
+		<altitudeLayer>Skyfaller</altitudeLayer>
+		<drawerType>RealtimeOnly</drawerType>
 		<useHitPoints>false</useHitPoints>
 		<drawOffscreen>true</drawOffscreen>
 	</ThingDef>
@@ -265,7 +257,7 @@
 		<tickerType>Rare</tickerType>
 	</ThingDef>
 
-	<ThingDef ParentName="MeteorBase">
+	<ThingDef ParentName="SK_BuildingBase">
 		<defName>Meteor</defName>
 		<label>Meteor</label>
 		<thingClass>SK.Events.Meteor</thingClass>
@@ -280,7 +272,6 @@
 		<statBases>
 			<MaxHitPoints>500</MaxHitPoints>
 		</statBases>
-		<selectable>true</selectable>
 	</ThingDef>
 
 </Defs>

@@ -18,7 +18,7 @@
             <Bulk>3.00</Bulk>
             <Mass>1.30</Mass>
         </statBases>
-        <soundInteract>EnergyPickup</soundInteract>
+        <soundInteract>ShotM3Predator</soundInteract>
         <weaponTags>
             <li>ADP1</li>
             <li>TierTwoLow</li>
@@ -31,10 +31,6 @@
             <li>Futuristic</li>
         </thingCategories>
         <tradeability>Sellable</tradeability>
-        <equippedStatOffsets>
-            <MoveSpeed>-0.17</MoveSpeed>
-            <WorkSpeedGlobal>-0.09</WorkSpeedGlobal>
-        </equippedStatOffsets>
         <verbs>
             <li Class="CombatExtended.VerbPropertiesCE">
                 <verbClass>CombatExtended.Verb_ShootCE</verbClass>
@@ -65,6 +61,9 @@
             <Plasma_Component>1</Plasma_Component>
             <Weapon_Parts>9</Weapon_Parts>
         </smeltProducts>
+		<thingSetMakerTags>
+			<li>RewardSpecial</li>
+		</thingSetMakerTags>
     </ThingDef>
 	<!-- A-1BW BLACK WIDOW -->
     <ThingDef ParentName="BaseGun_LongBarreled">
@@ -84,7 +83,7 @@
             <Bulk>10.20</Bulk>
             <Mass>3.50</Mass>
         </statBases>
-        <soundInteract>EnergyPickup</soundInteract>
+        <soundInteract>ShotM3Predator</soundInteract>
         <weaponTags>
             <li>ADR1</li>
             <li>AdvancedGun</li>
@@ -96,10 +95,6 @@
             <li>Futuristic</li>
         </thingCategories>
         <tradeability>Sellable</tradeability>
-        <equippedStatOffsets>
-            <MoveSpeed>-0.17</MoveSpeed>
-            <WorkSpeedGlobal>-0.09</WorkSpeedGlobal>
-        </equippedStatOffsets>
         <verbs>
             <li Class="CombatExtended.VerbPropertiesCE">
                 <verbClass>CombatExtended.Verb_ShootCE</verbClass>
@@ -131,6 +126,9 @@
             <Plasma_Component>1</Plasma_Component>
             <Weapon_Parts>9</Weapon_Parts>
         </smeltProducts>
+		<thingSetMakerTags>
+			<li>RewardSpecial</li>
+		</thingSetMakerTags>
     </ThingDef>
 	<!-- A-6 CERBERUS HARRIER -->
     <ThingDef ParentName="BaseGun_LongBarreled">
@@ -162,10 +160,6 @@
             <li>Futuristic</li>
         </thingCategories>
         <tradeability>Sellable</tradeability>
-        <equippedStatOffsets>
-            <MoveSpeed>-0.21</MoveSpeed>
-            <WorkSpeedGlobal>-0.15</WorkSpeedGlobal>
-        </equippedStatOffsets>
         <verbs>
             <li Class="CombatExtended.VerbPropertiesCE">
                 <recoilPattern>Regular</recoilPattern>
@@ -184,7 +178,7 @@
         </verbs>
         <comps>
             <li Class="CombatExtended.CompProperties_FireModes">
-                <aiUseBurstMode>TRUE</aiUseBurstMode>
+                <aiUseBurstMode>FALSE</aiUseBurstMode>
                 <aiAimMode>AimedShot</aiAimMode>
                 <aimedBurstShotCount>3</aimedBurstShotCount>
             </li>
@@ -202,6 +196,9 @@
             <Plasma_Component>1</Plasma_Component>
             <Weapon_Parts>9</Weapon_Parts>
         </smeltProducts>
+		<thingSetMakerTags>
+			<li>RewardSpecial</li>
+		</thingSetMakerTags>
     </ThingDef>
 	<!-- A-2S PREDATOR -->
     <ThingDef ParentName="BaseGun_LongBarreled">
@@ -212,7 +209,7 @@
             <texPath>Things/Weapons/Predator</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
-        <soundInteract>EnergyPickup</soundInteract>
+        <soundInteract>ShotM3Predator</soundInteract>
         <statBases>
             <MarketValue>3400</MarketValue>
             <SightsEfficiency>0.9</SightsEfficiency>
@@ -233,10 +230,6 @@
             <li>Futuristic</li>
         </thingCategories>
         <tradeability>Sellable</tradeability>
-        <equippedStatOffsets>
-            <MoveSpeed>-0.1</MoveSpeed>
-            <WorkSpeedGlobal>-0.075</WorkSpeedGlobal>
-        </equippedStatOffsets>
         <verbs>
             <li Class="CombatExtended.VerbPropertiesCE">
                 <recoilPattern>Regular</recoilPattern>
@@ -272,6 +265,9 @@
             <Plasma_Component>1</Plasma_Component>
             <Weapon_Parts>10</Weapon_Parts>
         </smeltProducts>
+		<thingSetMakerTags>
+			<li>RewardSpecial</li>
+		</thingSetMakerTags>
     </ThingDef>
 	<!-- A-3S HURRICANE -->
     <ThingDef ParentName="BaseGun_LongBarreled">
@@ -282,7 +278,7 @@
             <texPath>Things/Weapons/Hurricane</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
-        <soundInteract>EnergyPickup</soundInteract>
+        <soundInteract>ShotM3Predator</soundInteract>
         <statBases>
             <MarketValue>3400</MarketValue>
             <SightsEfficiency>0.9</SightsEfficiency>
@@ -303,10 +299,6 @@
             <li>Futuristic</li>
         </thingCategories>
         <tradeability>Sellable</tradeability>
-        <equippedStatOffsets>
-            <MoveSpeed>-0.1</MoveSpeed>
-            <WorkSpeedGlobal>-0.075</WorkSpeedGlobal>
-        </equippedStatOffsets>
         <verbs>
             <li Class="CombatExtended.VerbPropertiesCE">
                 <recoilPattern>Regular</recoilPattern>
@@ -325,7 +317,7 @@
         </verbs>
         <comps>
             <li Class="CombatExtended.CompProperties_FireModes">
-                <aiUseBurstMode>TRUE</aiUseBurstMode>
+                <aiUseBurstMode>FALSE</aiUseBurstMode>
                 <aiAimMode>AimedShot</aiAimMode>
                 <aimedBurstShotCount>2</aimedBurstShotCount>
             </li>
@@ -343,6 +335,9 @@
             <Plasma_Component>1</Plasma_Component>
             <Weapon_Parts>10</Weapon_Parts>
         </smeltProducts>
+		<thingSetMakerTags>
+			<li>RewardSpecial</li>
+		</thingSetMakerTags>
     </ThingDef>
     <!-- A-10 AVENGER -->
     <ThingDef ParentName="BaseGun_LongBarreled">
@@ -374,10 +369,6 @@
         <thingCategories>
             <li>Futuristic</li>
         </thingCategories>
-        <equippedStatOffsets>
-            <MoveSpeed>-0.28</MoveSpeed>
-            <WorkSpeedGlobal>-0.15</WorkSpeedGlobal>
-        </equippedStatOffsets>
         <verbs>
             <li Class="CombatExtended.VerbPropertiesCE">
                 <recoilPattern>Regular</recoilPattern>
@@ -389,14 +380,14 @@
                 <range>50</range>
                 <burstShotCount>10</burstShotCount>
                 <ticksBetweenBurstShots>4</ticksBetweenBurstShots>
-                <soundCast>ShotM8Avenger</soundCast>
+                <soundCast>ShotM300Claymore</soundCast>
                 <soundCastTail>GunTail_Medium</soundCastTail>
                 <muzzleFlashScale>9</muzzleFlashScale>
             </li>
         </verbs>
         <comps>
             <li Class="CombatExtended.CompProperties_FireModes">
-                <aiUseBurstMode>TRUE</aiUseBurstMode>
+                <aiUseBurstMode>FALSE</aiUseBurstMode>
                 <aiAimMode>AimedShot</aiAimMode>
                 <aimedBurstShotCount>5</aimedBurstShotCount>
             </li>
@@ -414,5 +405,8 @@
             <Plasma_Component>1</Plasma_Component>
             <Weapon_Parts>10</Weapon_Parts>
         </smeltProducts>
+		<thingSetMakerTags>
+			<li>RewardSpecial</li>
+		</thingSetMakerTags>
     </ThingDef>
 </Defs>

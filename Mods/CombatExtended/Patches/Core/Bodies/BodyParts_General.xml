@@ -2,44 +2,39 @@
 <Patch>
 
   <Operation Class="PatchOperationReplace">
-    <xpath>*/BodyPartDef[defName="Brain"]/hitPoints</xpath>
+    <xpath>Defs/BodyPartDef[defName="Brain"]/hitPoints</xpath>
     <value>
       <hitPoints>15</hitPoints>
     </value>
   </Operation>
 
   <Operation Class="PatchOperationReplace">
-    <xpath>*/BodyPartDef[defName="Rib"]/hitPoints</xpath>
-    <value>
-      <hitPoints>13</hitPoints>
-    </value>
-  </Operation>
-
-  <Operation Class="PatchOperationReplace">
-    <xpath>*/BodyPartDef[defName="LeftLeg"]/hitPoints</xpath>
+    <xpath>Defs/BodyPartDef[defName="Leg"]/hitPoints</xpath>
     <value>
       <hitPoints>40</hitPoints>
     </value>
   </Operation>
 
   <Operation Class="PatchOperationReplace">
-    <xpath>*/BodyPartDef[defName="LeftFoot"]/hitPoints</xpath>
+    <xpath>Defs/BodyPartDef[defName="Foot"]/hitPoints</xpath>
     <value>
       <hitPoints>26</hitPoints>
     </value>
   </Operation>
+  
+  <!-- ========== Modify bleed rates ========== -->
 
-  <Operation Class="PatchOperationReplace">
-    <xpath>*/BodyPartDef[defName="RightLeg"]/hitPoints</xpath>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/BodyPartDef[defName="Brain" or defName="Eye" or defName="Leg" or defName="Foot"]</xpath>
     <value>
-      <hitPoints>40</hitPoints>
+      <bleedRate>1.5</bleedRate>
     </value>
   </Operation>
 
   <Operation Class="PatchOperationReplace">
-    <xpath>*/BodyPartDef[defName="RightFoot"]/hitPoints</xpath>
+    <xpath>Defs/BodyPartDef[defName="Neck"]/bleedRate</xpath>
     <value>
-      <hitPoints>26</hitPoints>
+      <bleedRate>6</bleedRate>
     </value>
   </Operation>
 

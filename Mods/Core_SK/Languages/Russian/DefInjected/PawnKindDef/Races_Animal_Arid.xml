@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Arid -->
+  
+  <Muffalo.label>альфа муффало</Muffalo.label>
+  <Muffalo.labelFemale>муффало</Muffalo.labelFemale>
+  <Muffalo.labelPlural>муффало</Muffalo.labelPlural>
+  <!-- EN: muffalo calf -->
+  <Muffalo.lifeStages.muffalo_calf.label>телёнок муффало</Muffalo.lifeStages.muffalo_calf.label>
+  <!-- EN: muffalo calves -->
+  <Muffalo.lifeStages.muffalo_calf.labelPlural>телята муффало</Muffalo.lifeStages.muffalo_calf.labelPlural>
+  <Muffalo.lifeStages.1.label>молодой муффало</Muffalo.lifeStages.1.label>
+
+  <Buffalo.label>буффало</Buffalo.label>
+  <Buffalo.labelPlural>буффало</Buffalo.labelPlural>
+  <Buffalo.lifeStages.0.label>телёнок буффало</Buffalo.lifeStages.0.label>
+  <Buffalo.lifeStages.0.labelPlural>телята буффало</Buffalo.lifeStages.0.labelPlural>
+
+  <Rimram.label>баран</Rimram.label>
+  <Rimram.labelPlural>бараны</Rimram.labelPlural>
+  <Rimram.labelMale>баран</Rimram.labelMale>
+  <Rimram.labelMalePlural>бараны</Rimram.labelMalePlural>
+  <Rimram.labelFemale>овцы</Rimram.labelFemale>
+  <Rimram.labelFemalePlural>овцы</Rimram.labelFemalePlural>
+
+</LanguageData>

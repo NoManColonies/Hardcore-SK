@@ -1,301 +1,372 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <FactionDef Abstract="True" Name="PlayerFactionBase">
-    <homeIconPath>World/WorldObjects/DefaultFactionBase</homeIconPath>
-    <colorSpectrum>
-      <li>(0, 0.737, 0.847)</li>
-    </colorSpectrum>
-  </FactionDef>
-  
-  <FactionDef ParentName="PlayerFactionBase">
-    <defName>PlayerColony</defName>
-    <label>New Arrivals</label>
-    <description>Your own community.</description>
-    <isPlayer>true</isPlayer>
-    <basicMemberKind>Colonist</basicMemberKind>
-    <pawnsPlural>colonists</pawnsPlural>
-    <baseNameMaker>NamerFactionBasePlayerColony</baseNameMaker>
-	<baseNameMakerPlayer>NamerFactionPlayerColonyRandomized</baseNameMakerPlayer>
-	<factionNameMakerPlayer>NamerFactionBasePlayerColonyRandomized</factionNameMakerPlayer>
-	<geneticVariance>1</geneticVariance>
-    <techLevel>Industrial</techLevel>
-    <backstoryCategory>Civil</backstoryCategory>
-    <expandingIconTexture>World/WorldObjects/Expanding/Town</expandingIconTexture>
-    <startingResearchTags>
-      <li>ClassicStart</li>
-    </startingResearchTags>
-    <hairTags>
-      <li>Urban</li>
-    </hairTags>
-  </FactionDef>
-  
-  <FactionDef ParentName="PlayerFactionBase">
-    <defName>PlayerNova</defName>
-    <label>New Arrivals</label>
-    <description>Your own community.</description>
-    <isPlayer>true</isPlayer>
-    <basicMemberKind>ColonistNova</basicMemberKind>
-    <pawnsPlural>colonists</pawnsPlural>
-    <baseNameMaker>NamerFactionBasePlayerColony</baseNameMaker>
-	<baseNameMakerPlayer>NamerFactionPlayerColonyRandomized</baseNameMakerPlayer>
-	<factionNameMakerPlayer>NamerFactionBasePlayerColonyRandomized</factionNameMakerPlayer>
-	<geneticVariance>1</geneticVariance>
-    <techLevel>Industrial</techLevel>
-    <backstoryCategory>Civil</backstoryCategory>
-    <expandingIconTexture>World/WorldObjects/Expanding/Town</expandingIconTexture>
-    <startingResearchTags>
-      <li>ClassicStart</li>
-    </startingResearchTags>
-    <hairTags>
-      <li>Urban</li>
-    </hairTags>
-  </FactionDef>
-  
-  <FactionDef ParentName="PlayerFactionBase">
-    <defName>PlayerExiled</defName>
-    <label>New Arrivals</label>
-    <description>Your own community.</description>
-    <isPlayer>true</isPlayer>
-    <basicMemberKind>ColonistExiled</basicMemberKind>
-    <pawnsPlural>colonists</pawnsPlural>
-    <baseNameMaker>NamerFactionBasePlayerColony</baseNameMaker>
-	<baseNameMakerPlayer>NamerFactionPlayerColonyRandomized</baseNameMakerPlayer>
-	<factionNameMakerPlayer>NamerFactionBasePlayerColonyRandomized</factionNameMakerPlayer>
-	<geneticVariance>1</geneticVariance>
-    <techLevel>Industrial</techLevel>
-    <backstoryCategory>Civil</backstoryCategory>
-    <expandingIconTexture>World/WorldObjects/Expanding/Town</expandingIconTexture>
-    <startingResearchTags>
-      <li>ClassicStart</li>
-    </startingResearchTags>
-    <hairTags>
-      <li>Urban</li>
-    </hairTags>
-  </FactionDef>
-  
-  <FactionDef ParentName="PlayerFactionBase">
-    <defName>PlayerTribe</defName>
-    <label>New Tribe</label>
-    <description>Your own tribe.</description>
-    <isPlayer>true</isPlayer>
-    <pawnsPlural>tribespeople</pawnsPlural>
-    <basicMemberKind>Tribesperson</basicMemberKind>
-    <techLevel>Neolithic</techLevel>
-    <backstoryCategory>Tribal</backstoryCategory>
-	<pawnNameMaker>NamerPersonTribal</pawnNameMaker>
-	<baseNameMaker>NamerFactionBasePlayerTribe</baseNameMaker>
-	<baseNameMakerPlayer>NamerFactionTribal</baseNameMakerPlayer>
-	<factionNameMakerPlayer>NamerFactionBaseTribal</factionNameMakerPlayer>
-	<geneticVariance>1</geneticVariance>
-    <expandingIconTexture>UI/Icons/Factions/Tribals</expandingIconTexture>
-    <homeIconPath>World/WorldObjects/TribalFactionBase</homeIconPath>
-    <startingResearchTags>
-      <li>TribalStart</li>
-    </startingResearchTags>
-    <hairTags>
-      <li>Tribal</li>
-    </hairTags>
-    <apparelStuffFilter>
-	<categories>
-		<li>Leathers</li>
-	</categories>
-    <thingDefs>
-        <li>WoodPlank</li>
-        <li>Cloth</li>
-        <li>WoolMuffalo</li>
-        <li>WoolCamel</li>
-        <li>WoolAlpaca</li>
-		<li>HempCloth</li>
-        <li>RamWool</li>
-        <li>CopperBar</li>
-		<li>Bronze</li>
-    </thingDefs>
-    </apparelStuffFilter>
-    <recipePrerequisiteTags>
-      <li>Tribal</li>
-    </recipePrerequisiteTags>
-    </FactionDef>
-	
-  <FactionDef ParentName="PlayerFactionBase">
-    <defName>PlayerNorbal</defName>
-    <label>New soveingard</label>
-    <description>Your own norbals.</description>
-    <isPlayer>true</isPlayer>
-    <pawnsPlural>norbals</pawnsPlural>
-    <basicMemberKind>Norbalperson</basicMemberKind>
-    <baseNameMaker>NamerFactionBaseNorbal</baseNameMaker>
-	<baseNameMakerPlayer>NamerFactionBaseNorbal</baseNameMakerPlayer>
-	<factionNameMakerPlayer>NamerFactionNorbal</factionNameMakerPlayer>
-	<geneticVariance>0.1</geneticVariance>
-	<techLevel>Medieval</techLevel>
-    <backstoryCategory>Tribal</backstoryCategory>
-    <pawnNameMaker>NamerPersonNorbal</pawnNameMaker>
-    <expandingIconTexture>UI/Icons/Factions/Norbals</expandingIconTexture>
-    <homeIconPath>World/WorldObjects/TribalFactionBase</homeIconPath>
-    <startingResearchTags>
-      <li>TribalStart</li>
-    </startingResearchTags>
+	<FactionDef Abstract="True" Name="SK_PlayerFactionBase">
+		<homeIconPath>World/WorldObjects/DefaultSettlement</homeIconPath>
+		<colorSpectrum>
+			<li>(0, 0.737, 0.847)</li>
+		</colorSpectrum>
+	</FactionDef>
+
+	<FactionDef ParentName="SK_PlayerFactionBase">
+		<defName>PlayerColony</defName>
+		<label>New Arrivals</label>
+		<description>A colony of recently-arrived off-worlders.</description>
+		<isPlayer>true</isPlayer>
+		<basicMemberKind>Colonist</basicMemberKind>
+		<pawnSingular>colonist</pawnSingular>
+		<pawnsPlural>colonists</pawnsPlural>
+		<techLevel>Industrial</techLevel>
+		<expandingIconTexture>World/WorldObjects/Expanding/Town</expandingIconTexture>
+		<playerInitialSettlementNameMaker>NamerInitialSettlementColony</playerInitialSettlementNameMaker>
+		<factionNameMaker>NamerFactionOutlander</factionNameMaker>
+		<settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
+		<geneticVariance>1</geneticVariance>
+		<backstoryCategories>
+			<li>Civil</li>
+		</backstoryCategories>
+		<startingResearchTags>
+			<li>ClassicStart</li>
+		</startingResearchTags>
+		<hairTags>
+			<li>Urban</li>
+		</hairTags>
+		<apparelStuffFilter>
+			<categories>
+				<li>Leathers</li>
+			</categories>
+			<thingDefs>
+				<li>Plasteel</li>
+				<li>Synthread</li>
+				<li>FerrosiliconAlloy</li>
+				<li>CupronickelAlloy</li>
+				<li>SteelBar</li>
+			</thingDefs>
+		</apparelStuffFilter>
+	</FactionDef>
+
+	<FactionDef ParentName="SK_PlayerFactionBase">
+		<defName>PlayerNova</defName>
+		<label>New Arrivals</label>
+		<description>A colony of recently-arrived off-worlders.</description>
+		<isPlayer>true</isPlayer>
+		<basicMemberKind>Nova</basicMemberKind>
+		<pawnSingular>colonist</pawnSingular>
+		<pawnsPlural>colonists</pawnsPlural>
+		<techLevel>Industrial</techLevel>
+		<expandingIconTexture>World/WorldObjects/Expanding/Town</expandingIconTexture>
+		<playerInitialSettlementNameMaker>NamerInitialSettlementColony</playerInitialSettlementNameMaker>
+		<factionNameMaker>NamerFactionOutlander</factionNameMaker>
+		<settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
+		<geneticVariance>1</geneticVariance>
+		<backstoryCategories>
+			<li>Civil</li>
+		</backstoryCategories>
+		<startingResearchTags>
+			<li>ClassicStart</li>
+		</startingResearchTags>
+		<hairTags>
+			<li>Urban</li>
+		</hairTags>
+		<apparelStuffFilter>
+			<categories>
+				<li>Leathers</li>
+			</categories>
+			<thingDefs>
+				<li>Plasteel</li>
+				<li>Synthread</li>
+				<li>FerrosiliconAlloy</li>
+				<li>CupronickelAlloy</li>
+				<li>SteelBar</li>
+			</thingDefs>
+		</apparelStuffFilter>
+	</FactionDef>
+
+	<FactionDef ParentName="SK_PlayerFactionBase">
+		<defName>PlayerExiled</defName>
+		<label>New Arrivals</label>
+		<description>A colony of recently-arrived off-worlders.</description>
+		<isPlayer>true</isPlayer>
+		<basicMemberKind>ColonistExiled</basicMemberKind>
+		<pawnSingular>colonist</pawnSingular>
+		<pawnsPlural>colonists</pawnsPlural>
+		<techLevel>Industrial</techLevel>
+		<expandingIconTexture>World/WorldObjects/Expanding/Town</expandingIconTexture>
+		<playerInitialSettlementNameMaker>NamerInitialSettlementColony</playerInitialSettlementNameMaker>
+		<factionNameMaker>NamerFactionOutlander</factionNameMaker>
+		<settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
+		<geneticVariance>1</geneticVariance>
+		<backstoryCategories>
+			<li>Civil</li>
+		</backstoryCategories>
+		<startingResearchTags>
+			<li>ClassicStart</li>
+		</startingResearchTags>
+		<hairTags>
+			<li>Urban</li>
+		</hairTags>
+		<apparelStuffFilter>
+			<categories>
+				<li>Leathers</li>
+			</categories>
+			<thingDefs>
+				<li>Plasteel</li>
+				<li>Synthread</li>
+				<li>FerrosiliconAlloy</li>
+				<li>CupronickelAlloy</li>
+				<li>SteelBar</li>
+			</thingDefs>
+		</apparelStuffFilter>
+	</FactionDef>
+
+	<FactionDef ParentName="SK_PlayerFactionBase">
+		<defName>PlayerTribe</defName>
+		<label>New Tribe</label>
+		<description>A small tribe.</description>
+		<isPlayer>true</isPlayer>
+		<pawnSingular>tribesman</pawnSingular>
+		<pawnsPlural>tribespeople</pawnsPlural>
+		<basicMemberKind>Tribesperson</basicMemberKind>
+		<techLevel>Neolithic</techLevel>
+		<backstoryCategories>
+			<li>Tribal</li>
+		</backstoryCategories>
+		<expandingIconTexture>World/WorldObjects/Expanding/Village</expandingIconTexture>
+		<homeIconPath>World/WorldObjects/TribalSettlement</homeIconPath>
+		<pawnNameMaker>NamerPersonTribalEN</pawnNameMaker>
+		<playerInitialSettlementNameMaker>NamerInitialSettlementColony</playerInitialSettlementNameMaker>
+		<factionNameMaker>NamerFactionTribal</factionNameMaker>
+		<settlementNameMaker>NamerSettlementTribal</settlementNameMaker>
+		<geneticVariance>1</geneticVariance>
+		<startingResearchTags>
+			<li>TribalStart</li>
+		</startingResearchTags>
+		<hairTags>
+			<li>Tribal</li>
+		</hairTags>
+		<apparelStuffFilter>
+			<categories>
+				<li>Leathers</li>
+			</categories>
+			<thingDefs>
+				<li>WoodPlank</li>
+				<li>Cloth</li>
+				<li>WoolMuffalo</li>
+				<li>WoolCamel</li>
+				<li>WoolAlpaca</li>
+				<li>HempCloth</li>
+				<li>RamWool</li>
+				<li>CopperBar</li>
+				<li>Bronze</li>
+			</thingDefs>
+		</apparelStuffFilter>
+		<recipePrerequisiteTags>
+			<li>Tribal</li>
+		</recipePrerequisiteTags>
+	</FactionDef>
+
+	<FactionDef ParentName="SK_PlayerFactionBase">
+		<defName>PlayerNorbal</defName>
+		<label>New soveingard</label>
+		<description>Are small group of norbals.</description>
+		<isPlayer>true</isPlayer>
+		<pawnsPlural>norbals</pawnsPlural>
+		<pawnSingular>norbal</pawnSingular>
+		<basicMemberKind>Norbalperson</basicMemberKind>
+		<techLevel>Medieval</techLevel>
+		<backstoryCategories>
+			<li>Tribal</li>
+		</backstoryCategories>
+		<pawnNameMaker>NamerPersonNorbal</pawnNameMaker>
+		<expandingIconTexture>UI/Icons/Factions/Norbals</expandingIconTexture>
+		<homeIconPath>World/WorldObjects/TribalSettlement</homeIconPath>
+		<playerInitialSettlementNameMaker>NamerFactionBaseNorbal</playerInitialSettlementNameMaker>
+		<settlementNameMaker>NamerFactionBaseNorbal</settlementNameMaker>
+		<factionNameMaker>NamerFactionNorbal</factionNameMaker>
+		<geneticVariance>0.1</geneticVariance>
+		<forageabilityFactor>1.5</forageabilityFactor>
+		<startingResearchTags>
+			<li>TribalStart</li>
+		</startingResearchTags>
 		<hairTags>
 			<li>Norbal</li>
 		</hairTags>
-    <apparelStuffFilter>
-	<categories>
-		<li>Leathers</li>
-	</categories>
-    <thingDefs>
-        <li>WoodPlank</li>
-        <li>Cloth</li>
-        <li>WoolMuffalo</li>
-        <li>WoolCamel</li>
-        <li>WoolAlpaca</li>
-		<li>HempCloth</li>
-        <li>RamWool</li>
-        <li>CopperBar</li>
-		<li>Bronze</li>
-        <li>SteelBar</li>
-    </thingDefs>
-    </apparelStuffFilter>
-    </FactionDef>
-	
+		<apparelStuffFilter>
+			<categories>
+				<li>Leathers</li>
+			</categories>
+			<thingDefs>
+				<li>WoodPlank</li>
+				<li>Cloth</li>
+				<li>WoolMuffalo</li>
+				<li>WoolCamel</li>
+				<li>WoolAlpaca</li>
+				<li>HempCloth</li>
+				<li>RamWool</li>
+				<li>CopperBar</li>
+				<li>Bronze</li>
+				<li>Plasteel</li>
+			</thingDefs>
+		</apparelStuffFilter>
+	</FactionDef>
 
-	<FactionDef ParentName="PlayerFactionBase">
-    <defName>PlayerSurvivor</defName>
-    <label>New Survivors</label>
-    <description>Your own community.</description>
-    <isPlayer>true</isPlayer>
-    <basicMemberKind>Survivor</basicMemberKind>
-    <pawnsPlural>survivors</pawnsPlural>
-    <baseNameMaker>NamerFactionBasePlayerColony</baseNameMaker>
-	<baseNameMakerPlayer>NamerFactionPlayerColonyRandomized</baseNameMakerPlayer>
-	<factionNameMakerPlayer>NamerFactionBasePlayerColonyRandomized</factionNameMakerPlayer>
-	<geneticVariance>1</geneticVariance>
-    <techLevel>Industrial</techLevel>
-    <backstoryCategory>Civil</backstoryCategory>
-    <expandingIconTexture>World/WorldObjects/Expanding/Town</expandingIconTexture>
-    <startingResearchTags>
-      <li>ClassicStart</li>
-    </startingResearchTags>
-    <hairTags>
-      <li>Urban</li>
-    </hairTags>
-  </FactionDef>
-  
-  
-  <FactionDef ParentName="PlayerFactionBase">
-    <defName>OrassanPlayerColony</defName>
-    <label>Orassan Enclaves</label>
-    <description>Your own community.</description>
-    <isPlayer>true</isPlayer>
-    <basicMemberKind>Orassan</basicMemberKind>
-    <pawnsPlural>colonists</pawnsPlural>
-	<pawnNameMaker>NamerPersonOrassan</pawnNameMaker>
-    <baseNameMaker>NamerFactionBasePlayerColony</baseNameMaker>
-	<baseNameMakerPlayer>NamerFactionPlayerColonyRandomized</baseNameMakerPlayer>
-	<factionNameMakerPlayer>NamerFactionBasePlayerColonyRandomized</factionNameMakerPlayer>
-	<geneticVariance>1</geneticVariance>
-    <techLevel>Spacer</techLevel>
-    <backstoryCategory>Orassan</backstoryCategory>
-    <expandingIconTexture>World/WorldObjects/Expanding/Town</expandingIconTexture>
-    <startingResearchTags>
-      <li>ClassicStart</li>
-    </startingResearchTags>
-    <hairTags>
-      <li>Orassan</li>
-    </hairTags>
-    <apparelStuffFilter>
-	<categories>
-		<li>Leathers</li>
-	</categories>
-    <thingDefs>
-		<li>Kevlar</li>
-        <li>Synthread</li>
-        <li>Hyperweave</li>
-		<li>FerrosiliconAlloy</li>
-        <li>CupronickelAlloy</li>
-        <li>Plasteel</li>
-    </thingDefs>
-    </apparelStuffFilter>
-    <colorSpectrum>
-      <li>(0, 0.737, 0.847)</li>
-    </colorSpectrum>
-  </FactionDef>
- 
- 
-  <FactionDef ParentName="PlayerFactionBase">
-    <defName>AsariPlayerColony</defName>
-    <label>Asari Republic</label>
-    <description>Your own Asari community.</description>
-    <isPlayer>true</isPlayer>
-    <basicMemberKind>AsariPawn</basicMemberKind>
-    <pawnsPlural>colonists</pawnsPlural>
-    <baseNameMaker>NamerFactionBasePlayerColony</baseNameMaker>
-	<baseNameMakerPlayer>NamerFactionPlayerColonyRandomized</baseNameMakerPlayer>
-	<factionNameMakerPlayer>NamerFactionBasePlayerColonyRandomized</factionNameMakerPlayer>
-	<geneticVariance>1</geneticVariance>
-	<pawnNameMaker>NamerPersonAsari</pawnNameMaker>
-	<techLevel>Spacer</techLevel>
-    <backstoryCategory>Asaris</backstoryCategory>
-    <expandingIconTexture>World/WorldObjects/Expanding/Town</expandingIconTexture>
-    <startingResearchTags>
-      <li>ClassicStart</li>
-    </startingResearchTags>
-	<hairTags>
-		<li>AsariHair</li>
-	</hairTags>
-    <apparelStuffFilter>
-	<categories>
-		<li>Leathers</li>
-	</categories>
-    <thingDefs>
-        <li>DevilstrandCloth</li>
-		<li>Kevlar</li>
-        <li>Synthread</li>
-        <li>Hyperweave</li>
-		<li>FerrosiliconAlloy</li>
-        <li>CupronickelAlloy</li>
-        <li>Plasteel</li>
-        <li>AlnicoAlloy</li>
-		<li>NichromeAlloy</li>
-        <li>StelliteAlloy</li>
-    </thingDefs>
-    </apparelStuffFilter>
-  </FactionDef>
- 
+	<FactionDef ParentName="SK_PlayerFactionBase">
+		<defName>PlayerSurvivor</defName>
+		<label>New Survivors</label>
+		<description>A colony of recently-arrived off-worlders.</description>
+		<isPlayer>true</isPlayer>
+		<basicMemberKind>Survivor</basicMemberKind>
+		<pawnSingular>survivor</pawnSingular>
+		<pawnsPlural>survivors</pawnsPlural>
+		<techLevel>Industrial</techLevel>
+		<backstoryCategories>
+			<li>Civil</li>
+		</backstoryCategories>
+		<expandingIconTexture>World/WorldObjects/Expanding/Town</expandingIconTexture>
+		<playerInitialSettlementNameMaker>NamerInitialSettlementColony</playerInitialSettlementNameMaker>
+		<factionNameMaker>NamerFactionOutlander</factionNameMaker>
+		<settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
+		<geneticVariance>1</geneticVariance>
+		<startingResearchTags>
+			<li>ClassicStart</li>
+		</startingResearchTags>
+		<hairTags>
+			<li>Urban</li>
+		</hairTags>
+		<apparelStuffFilter>
+			<categories>
+				<li>Leathers</li>
+			</categories>
+			<thingDefs>
+				<li>Plasteel</li>
+				<li>Synthread</li>
+				<li>FerrosiliconAlloy</li>
+				<li>CupronickelAlloy</li>
+				<li>SteelBar</li>
+			</thingDefs>
+		</apparelStuffFilter>
+	</FactionDef>
 
- <FactionDef Parent="PlayerFactionBase">
-    <defName>NuclearColonySurvivor</defName>
-    <label>New Arrivals</label>
-    <description>Your own community.</description>
-    <isPlayer>true</isPlayer>
-    <basicMemberKind>NuclearSurvivor</basicMemberKind>
-    <pawnsPlural>colonists</pawnsPlural>
-    <baseNameMaker>NamerFactionBasePlayerColony</baseNameMaker>
-	<baseNameMakerPlayer>NamerFactionPlayerColonyRandomized</baseNameMakerPlayer>
-	<factionNameMakerPlayer>NamerFactionBasePlayerColonyRandomized</factionNameMakerPlayer>
-	<geneticVariance>1</geneticVariance>
-    <techLevel>Industrial</techLevel>
-    <backstoryCategory>Civil</backstoryCategory>
-    <expandingIconTexture>World/WorldObjects/Expanding/Town</expandingIconTexture>
-    <startingResearchTags>
-      <li>ClassicStart</li>
-    </startingResearchTags>
-    <hairTags>
-      <li>Urban</li>
-    </hairTags>
-    <apparelStuffFilter>
-	<categories>
-		<li>Leathers</li>
-	</categories>
-    <thingDefs>
-		<li>Kevlar</li>
-        <li>Synthread</li>
-        <li>Hyperweave</li>
-		<li>FerrosiliconAlloy</li>
-        <li>CupronickelAlloy</li>
-        <li>Plasteel</li>
-    </thingDefs>
-    </apparelStuffFilter>
-  </FactionDef>  
+	<FactionDef ParentName="SK_PlayerFactionBase">
+		<defName>OrassanPlayerColony</defName>
+		<label>Orassan Enclaves</label>
+		<description>A colony of recently-arrived off-worlders.</description>
+		<isPlayer>true</isPlayer>
+		<basicMemberKind>Orassan</basicMemberKind>
+		<pawnSingular>colonist</pawnSingular>
+		<pawnsPlural>colonists</pawnsPlural>
+		<techLevel>Spacer</techLevel>
+		<pawnNameMaker>NamerPersonOrassan</pawnNameMaker>
+		<backstoryCategories>
+			<li>Orassan</li>
+		</backstoryCategories>
+		<expandingIconTexture>World/WorldObjects/Expanding/Town</expandingIconTexture>
+		<playerInitialSettlementNameMaker>NamerInitialSettlementColony</playerInitialSettlementNameMaker>
+		<factionNameMaker>NamerFactionOutlander</factionNameMaker>
+		<settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
+		<geneticVariance>1</geneticVariance>
+		<startingResearchTags>
+			<li>ClassicStart</li>
+		</startingResearchTags>
+		<hairTags>
+			<li>Urban</li>
+		</hairTags>
+		<apparelStuffFilter>
+			<categories>
+				<li>Leathers</li>
+			</categories>
+			<thingDefs>
+				<li>Kevlar</li>
+				<li>Synthread</li>
+				<li>Hyperweave</li>
+				<li>FerrosiliconAlloy</li>
+				<li>CupronickelAlloy</li>
+				<li>SteelBar</li>
+			</thingDefs>
+		</apparelStuffFilter>
+		<colorSpectrum>
+			<li>(0, 0.737, 0.847)</li>
+		</colorSpectrum>
+	</FactionDef>
+
+	<FactionDef ParentName="SK_PlayerFactionBase">
+		<defName>AsariPlayerColony</defName>
+		<label>Asari Republic</label>
+		<description>A colony of recently-arrived off-worlders.</description>
+		<isPlayer>true</isPlayer>
+		<pawnSingular>colonist</pawnSingular>
+		<pawnsPlural>colonists</pawnsPlural>
+		<techLevel>Spacer</techLevel>
+		<backstoryCategories>
+			<li>Asaris</li>
+		</backstoryCategories>
+		<pawnNameMaker>NamerPersonAsari</pawnNameMaker>
+		<basicMemberKind>AsariPawn</basicMemberKind>
+		<expandingIconTexture>World/WorldObjects/Expanding/Town</expandingIconTexture>
+		<playerInitialSettlementNameMaker>NamerInitialSettlementColony</playerInitialSettlementNameMaker>
+		<factionNameMaker>NamerFactionOutlander</factionNameMaker>
+		<settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
+		<geneticVariance>1</geneticVariance>
+		<startingResearchTags>
+			<li>ClassicStart</li>
+		</startingResearchTags>
+		<hairTags>
+			<li>AsariHair</li>
+		</hairTags>
+		<apparelStuffFilter>
+			<categories>
+				<li>Leathers</li>
+			</categories>
+			<thingDefs>
+				<li>DevilstrandCloth</li>
+				<li>Kevlar</li>
+				<li>Synthread</li>
+				<li>Hyperweave</li>
+				<li>FerrosiliconAlloy</li>
+				<li>CupronickelAlloy</li>
+				<li>SteelBar</li>
+				<li>AlnicoAlloy</li>
+				<li>StelliteAlloy</li>
+			</thingDefs>
+		</apparelStuffFilter>
+	</FactionDef>
+
+	<FactionDef Parent="SK_PlayerFactionBase">
+		<defName>NuclearColonySurvivor</defName>
+		<label>New Arrivals</label>
+		<description>A colony of recently-arrived off-worlders.</description>
+		<isPlayer>true</isPlayer>
+		<basicMemberKind>NuclearSurvivor</basicMemberKind>
+		<pawnSingular>colonist</pawnSingular>
+		<pawnsPlural>colonists</pawnsPlural>
+		<techLevel>Industrial</techLevel>
+		<backstoryCategories>
+			<li>Civil</li>
+		</backstoryCategories>
+		<expandingIconTexture>World/WorldObjects/Expanding/Town</expandingIconTexture>
+		<playerInitialSettlementNameMaker>NamerInitialSettlementColony</playerInitialSettlementNameMaker>
+		<factionNameMaker>NamerFactionOutlander</factionNameMaker>
+		<settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
+		<geneticVariance>1</geneticVariance>
+		<startingResearchTags>
+			<li>ClassicStart</li>
+		</startingResearchTags>
+		<hairTags>
+			<li>Urban</li>
+		</hairTags>
+		<apparelStuffFilter>
+			<categories>
+				<li>Leathers</li>
+			</categories>
+			<thingDefs>
+				<li>Kevlar</li>
+				<li>Synthread</li>
+				<li>Hyperweave</li>
+				<li>FerrosiliconAlloy</li>
+				<li>CupronickelAlloy</li>
+				<li>SteelBar</li>
+			</thingDefs>
+		</apparelStuffFilter>
+	</FactionDef>  
 
 </Defs>

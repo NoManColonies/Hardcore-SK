@@ -2,7 +2,7 @@
 
 <Defs>
 
-  <ThingDef ParentName="BuildingBase">
+  <ThingDef ParentName="SK_BuildingBase">
     <defName>AquacultureBasin</defName>
     <label>Aquaculture basin</label>
     <description>A basin designed to breed fishes. Water quality is auto-regulated. You need to provide an external temperature regulation and some food in attached hopper to feed the bred fishes.</description>
@@ -41,14 +41,14 @@
     </stuffCategories>
     <costStuffCount>105</costStuffCount>
     <costList>
-			<Component>10</Component>
+			<ComponentIndustrial>10</ComponentIndustrial>
 			<Plastic>50</Plastic>
       		<Electronics>4</Electronics>
 			<Mechanism>3</Mechanism>
     </costList>
     <useHitPoints>True</useHitPoints>
     <statBases>
-      <WorkToBuild>1800</WorkToBuild>
+      <WorkToBuild>4800</WorkToBuild>
       <MaxHitPoints>300</MaxHitPoints>
       <Beauty>20</Beauty>
       <Flammability>0.4</Flammability>
@@ -68,12 +68,13 @@
       <li>ITab_Bills</li>
     </inspectorTabs>
     <building>
-      <nutritionCostPerDispense>20</nutritionCostPerDispense>
-      <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+      <nutritionCostPerDispense>1.0</nutritionCostPerDispense>
+      <wantsHopperAdjacent>true</wantsHopperAdjacent>
     </building>
     <researchPrerequisites>
       <li>SK_FishingII</li>
     </researchPrerequisites>
+	<constructionSkillPrerequisite>10</constructionSkillPrerequisite>
   </ThingDef>
 
 </Defs>

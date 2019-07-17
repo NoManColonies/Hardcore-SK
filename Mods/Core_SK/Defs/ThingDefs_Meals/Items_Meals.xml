@@ -17,14 +17,14 @@
 		</comps>
 		<ingestible>
 			<chairSearchRadius>60</chairSearchRadius>
-    </ingestible>
+		</ingestible>
 		<alwaysHaulable>true</alwaysHaulable>
 		<drawGUIOverlay>true</drawGUIOverlay>
 		<rotatable>false</rotatable>
 		<pathCost>15</pathCost>
 	</ThingDef>
 
-	<ThingDef Abstract="True" Name="OrganicMeals" ParentName="ResBase">
+	<ThingDef Name="OrganicMeals" ParentName="ResBase" Abstract="True">
 		<graphicData>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
@@ -34,48 +34,103 @@
 			<Flammability>1.0</Flammability>
 			<DeteriorationRate>5</DeteriorationRate>
 			<Mass>0.03</Mass>
-		    <Bulk>0.02</Bulk>
+			<Bulk>0.02</Bulk>
 		</statBases>
 		<tickerType>Rare</tickerType>
 	</ThingDef>
+	
+	<ThingDef Name="EdibleBase" ParentName="ResBase" Abstract="True">
+		<statBases>
+			<MaxHitPoints>50</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+			<Beauty>-4</Beauty>
+			<Bulk>0.25</Bulk>
+			<Mass>0.35</Mass>
+			<DeteriorationRate>10</DeteriorationRate>
+		</statBases>
+		<stackLimit>10</stackLimit>
+		<tickerType>Rare</tickerType>
+		<socialPropernessMatters>true</socialPropernessMatters>
+		<comps>
+			<li Class="CompProperties_Ingredients" />
+			<li Class="CompProperties_FoodPoisonable" />
+		</comps>
+		<resourceReadoutPriority>Last</resourceReadoutPriority>
+		<uiIconForStackCount>1</uiIconForStackCount>
+		<ingestible>
+			<foodType>Meal</foodType>
+			<maxNumToIngestAtOnce>1</maxNumToIngestAtOnce>
+			<optimalityOffsetHumanlikes>16</optimalityOffsetHumanlikes>
+		</ingestible>
+	</ThingDef>
 
-	<ThingDef Name="MealBase" Abstract="True">
-    <thingClass>ThingWithComps</thingClass>
-    <category>Item</category>
-    <useHitPoints>true</useHitPoints>
-    <selectable>true</selectable>
-    <statBases>
-		  <MaxHitPoints>50</MaxHitPoints>
-		  <Flammability>1.0</Flammability>
-		  <Beauty>-6</Beauty>
-		  <Bulk>0.25</Bulk>
-		  <Mass>0.35</Mass>
-	</statBases>
-    <altitudeLayer>Item</altitudeLayer>
-    <stackLimit>10</stackLimit>
-    <tickerType>Rare</tickerType>
-    <socialPropernessMatters>true</socialPropernessMatters>
-    <alwaysHaulable>true</alwaysHaulable>
-    <comps>
-      <li Class="CompProperties_Forbiddable" />
-      <li Class="CompProperties_Ingredients" />
-      <li Class="CompProperties_FoodPoisonable" />
-    </comps>
-    <pathCost>15</pathCost>
-    <resourceReadoutPriority>Last</resourceReadoutPriority>
-    <drawGUIOverlay>true</drawGUIOverlay>
-    <ingestible>
-      <foodType>Meal</foodType>
-      <maxNumToIngestAtOnce>1</maxNumToIngestAtOnce>
-      <optimalityOffsetHumanlikes>16</optimalityOffsetHumanlikes>
-	  <chairSearchRadius>60</chairSearchRadius>
-    </ingestible>
+	<ThingDef Name="SK_MealBase" ParentName="EdibleBase" Abstract="True">
 		<thingCategories>
 			<li>FoodMeals</li>
 		</thingCategories>
-  </ThingDef>
+	</ThingDef>
 
-	<ThingDef ParentName="MealBase" Name="MealRottable" Abstract="True">
+	<ThingDef Name="SweetMealBase" ParentName="EdibleBase" Abstract="True">
+		<thingCategories>
+			<li>SweetMeals</li>
+		</thingCategories>
+	</ThingDef>
+
+	<ThingDef Name="MealBeverage" ParentName="EdibleBase" Abstract="True">
+		<statBases>
+			<Beauty>-6</Beauty>
+			<Bulk>1.0</Bulk>
+			<Mass>0.70</Mass>
+		</statBases>
+	</ThingDef>
+
+
+	<ThingDef ParentName="SK_MealBase">
+		<defName>MealSurvivalPack</defName>
+		<label>Packaged Survival Meal</label>
+		<description>A high-quality packaged meal, manufactured for use in survival situations.</description>
+		<graphicData>
+			<texPath>Things/Item/Meal/SurvivalPack</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<DeteriorationRate>0.25</DeteriorationRate>
+			<MarketValue>30</MarketValue>
+			<Bulk>1.50</Bulk>
+			<Mass>1.00</Mass>
+			<Nutrition>0.9</Nutrition>
+		</statBases>
+		<ingestible>
+			<preferability>MealSimple</preferability>
+			<tasteThought>AteFineMeal</tasteThought>
+			<ingestEffect>EatVegetarian</ingestEffect>
+			<ingestSound>Meal_Eat</ingestSound>
+			<optimalityOffsetHumanlikes>-5</optimalityOffsetHumanlikes>
+			<optimalityOffsetFeedingAnimals>-5</optimalityOffsetFeedingAnimals>
+		</ingestible>
+	</ThingDef>
+
+	<ThingDef ParentName="SK_MealBase">
+		<defName>MealSimple</defName>
+		<label>Simple Meal</label>
+		<description>A simple meal quickly cooked from a few ingredients.</description>
+		<graphicData>
+			<texPath>Things/Item/Meal/Simple</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<DeteriorationRate>10</DeteriorationRate>
+			<MarketValue>25</MarketValue>
+			<WorkToMake>300</WorkToMake>
+			<Bulk>1.30</Bulk>
+			<Mass>1.00</Mass>
+			<Nutrition>0.85</Nutrition>
+		</statBases>
+		<ingestible>
+			<preferability>MealSimple</preferability>
+			<ingestEffect>EatVegetarian</ingestEffect>
+			<ingestSound>Meal_Eat</ingestSound>
+		</ingestible>
 		<comps>
 			<li Class="CompProperties_Rottable">
 				<daysToRotStart>4</daysToRotStart>
@@ -84,209 +139,14 @@
 		</comps>
 	</ThingDef>
 
-	<ThingDef Name="SweetMealBase" Abstract="True">
-    <thingClass>ThingWithComps</thingClass>
-    <category>Item</category>
-    <useHitPoints>true</useHitPoints>
-    <selectable>true</selectable>
-    <statBases>
-		  <MaxHitPoints>50</MaxHitPoints>
-		  <Flammability>1.0</Flammability>
-		  <Beauty>-6</Beauty>
-		  <Bulk>0.25</Bulk>
-		  <Mass>0.35</Mass>
-	</statBases>
-    <altitudeLayer>Item</altitudeLayer>
-    <stackLimit>10</stackLimit>
-    <tickerType>Rare</tickerType>
-    <socialPropernessMatters>true</socialPropernessMatters>
-    <alwaysHaulable>true</alwaysHaulable>
-    <comps>
-      <li Class="CompProperties_Forbiddable" />
-      <li Class="CompProperties_Ingredients" />
-      <li Class="CompProperties_FoodPoisonable" />
-    </comps>
-    <pathCost>15</pathCost>
-    <resourceReadoutPriority>Last</resourceReadoutPriority>
-    <drawGUIOverlay>true</drawGUIOverlay>
-    <ingestible>
-      <foodType>Meal</foodType>
-      <maxNumToIngestAtOnce>1</maxNumToIngestAtOnce>
-      <optimalityOffsetHumanlikes>16</optimalityOffsetHumanlikes>
-	  <chairSearchRadius>60</chairSearchRadius>
-    </ingestible>
-		<thingCategories>
-			<li>SweetMeals</li>
-		</thingCategories>
-  </ThingDef>
 
-	<ThingDef Name="MealBeverage" Abstract="True">
-	<thingClass>ThingWithComps</thingClass>
-    <category>Item</category>
-    <useHitPoints>true</useHitPoints>
-    <selectable>true</selectable>
-    <statBases>
-		  <MaxHitPoints>50</MaxHitPoints>
-		  <Flammability>1.0</Flammability>
-		  <Beauty>-6</Beauty>
-		  <Bulk>1.0</Bulk>
-		  <Mass>0.70</Mass>
-	</statBases>
-    <altitudeLayer>Item</altitudeLayer>
-    <stackLimit>10</stackLimit>
-    <tickerType>Rare</tickerType>
-    <socialPropernessMatters>true</socialPropernessMatters>
-    <alwaysHaulable>true</alwaysHaulable>
-    <comps>
-      <li Class="CompProperties_Forbiddable" />
-      <li Class="CompProperties_Ingredients" />
-      <li Class="CompProperties_FoodPoisonable" />
-    </comps>
-    <pathCost>15</pathCost>
-    <resourceReadoutPriority>Last</resourceReadoutPriority>
-    <drawGUIOverlay>true</drawGUIOverlay>
-    <ingestible>
-      <foodType>Meal</foodType>
-      <maxNumToIngestAtOnce>1</maxNumToIngestAtOnce>
-      <optimalityOffsetHumanlikes>16</optimalityOffsetHumanlikes>
-	  <chairSearchRadius>60</chairSearchRadius>
-    </ingestible>
-    </ThingDef>
-
-
-	<ThingDef ParentName="OrganicProductBase">
-		<defName>Kibble</defName>
-		<label>Kibble</label>
-		<thingCategories>
-			<li>Animalfood</li>
-			<!--<li>FoodMeals</li>-->
-		</thingCategories>
-		<description>Kibble animal feed made from mixed meat and plant sources. Humans can eat it, but they really, really don't like it.</description>
- 		<graphicData>
-			<texPath>Things/Item/Resource/Kibble</texPath>
-		</graphicData>
-		<socialPropernessMatters>true</socialPropernessMatters>
-		<statBases>
-			<MarketValue>1.6</MarketValue>
-			<Mass>0.02</Mass>
-			<Bulk>0.05</Bulk>
-			<DeteriorationRate>2</DeteriorationRate>
-		</statBases>
-		<ingestible>
-		  <foodType>Kibble</foodType>
-		  <preferability>RawBad</preferability>
-		  <tasteThought>AteKibble</tasteThought>
-		  <optimalityOffsetHumanlikes>-30</optimalityOffsetHumanlikes>
-		  <optimalityOffsetFeedingAnimals>15</optimalityOffsetFeedingAnimals>
-		  <nutrition>0.05</nutrition>
-		  <ingestEffect>EatVegetarian</ingestEffect>
-		  <ingestSound>RawVegetable_Eat</ingestSound>
-		</ingestible>
-		<comps>
-			<li Class="CompProperties_FoodPoisoningChance">
-				<humanlikeOnly>true</humanlikeOnly>
-			</li>
-			<li Class="CompProperties_Ingredients" />
-		</comps>
-		<stackLimit>150</stackLimit>
-	</ThingDef>
-
-	<ThingDef ParentName="OrganicProductBase">
-		<defName>Pemmican</defName>
-		<label>Pemmican</label>
-		<thingClass>ThingWithComps</thingClass>
-		<thingCategories>
-			<li>FoodMeals</li>
-		</thingCategories>
-		<description>A preserved mashed mixture of fat and plant food. Tastes bland, but not offensive. It lasts a very long time without refrigeration.</description>
-		<graphicData>
-			<texPath>Things/Item/Resource/Pemmican</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-		</graphicData>
-		<statBases>
-			<MarketValue>3.1</MarketValue>
-			<WorkToMake>600</WorkToMake>
-			<Mass>0.03</Mass>
-			<Bulk>0.08</Bulk>
-		</statBases>
-		<ingestible>
-			<foodType>Meal</foodType>
-			<preferability>MealSimple</preferability>
-			<nutrition>0.05</nutrition>
-			<ingestEffect>EatVegetarian</ingestEffect>
-			<ingestSound>Meal_Eat</ingestSound>
-			<optimalityOffsetHumanlikes>6</optimalityOffsetHumanlikes>
-		</ingestible>
-		<comps>
-			<li Class="CompProperties_Rottable">
-				<daysToRotStart>80</daysToRotStart>
-				<rotDestroys>true</rotDestroys>
-			</li>
-			<li Class="CompProperties_FoodPoisoningChance">
-				<humanlikeOnly>true</humanlikeOnly>
-			</li>
-			<li Class="CompProperties_Ingredients" />
-		</comps>
-		<stackLimit>150</stackLimit>
-	</ThingDef>
-
-
-	<ThingDef ParentName="MealBase">
-		<defName>MealSurvivalPack</defName>
-		<label>Packaged Survival Meal</label>
-		<description>A high-quality packaged meal, manufactured for use in survival situations.</description>
-		<graphicData>
-			<texPath>Things/Item/Meal/Meal_Survival</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-		</graphicData>
-		<statBases>
-			<DeteriorationRate>0.25</DeteriorationRate>
-			<MarketValue>30</MarketValue>
-			<Bulk>1.50</Bulk>
-			<Mass>1.00</Mass>
-		</statBases>
-		<ingestible>
-		  <preferability>MealSimple</preferability>
-		  <tasteThought>AteFineMeal</tasteThought>
-		  <nutrition>0.90</nutrition>
-		  <ingestEffect>EatVegetarian</ingestEffect>
-		  <ingestSound>Meal_Eat</ingestSound>
-			<optimalityOffsetHumanlikes>-5</optimalityOffsetHumanlikes>
-			<optimalityOffsetFeedingAnimals>-5</optimalityOffsetFeedingAnimals>
-		</ingestible>
-	</ThingDef>
-
-	<ThingDef ParentName="MealRottable">
-		<defName>MealSimple</defName>
-		<label>Simple Meal</label>
-		<description>A simple meal quickly cooked from a few ingredients.</description>
-		<graphicData>
-			<texPath>Things/Item/Meal/Meal_Simple</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-		</graphicData>
-		<statBases>
-			<DeteriorationRate>10</DeteriorationRate>
-			<MarketValue>25</MarketValue>
-			<WorkToMake>300</WorkToMake>
-			<Bulk>1.30</Bulk>
-			<Mass>1.00</Mass>
-		</statBases>
-		<ingestible>
-			<preferability>MealSimple</preferability>
-			<nutrition>0.85</nutrition>
-			<ingestEffect>EatVegetarian</ingestEffect>
-			<ingestSound>Meal_Eat</ingestSound>
-		</ingestible>
-	</ThingDef>
-
-
-	<ThingDef ParentName="MealRottable">
+	<ThingDef ParentName="SK_MealBase">
 		<defName>MealFine</defName>
 		<label>Fine Meal</label>
 		<description>A complex dish assembled with care from a wide selection of ingredients.</description>
 		<graphicData>
-			<texPath>Things/Item/Meal/Meal_Fine</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
+			<texPath>Things/Item/Meal/Fine</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<statBases>
 			<DeteriorationRate>10</DeteriorationRate>
@@ -294,24 +154,30 @@
 			<WorkToMake>450</WorkToMake>
 			<Bulk>1.30</Bulk>
 			<Mass>1.00</Mass>
+			<Nutrition>0.9</Nutrition>
 		</statBases>
 		<ingestible>
 			<preferability>MealFine</preferability>
-			<nutrition>0.90</nutrition>
 			<tasteThought>AteFineMeal</tasteThought>
 			<ingestEffect>EatVegetarian</ingestEffect>
 			<ingestSound>Meal_Eat</ingestSound>
 		</ingestible>
+		<comps>
+			<li Class="CompProperties_Rottable">
+				<daysToRotStart>4</daysToRotStart>
+				<rotDestroys>true</rotDestroys>
+			</li>
+		</comps>
 	</ThingDef>
 
 
-	<ThingDef ParentName="MealRottable">
+	<ThingDef ParentName="SK_MealBase">
 		<defName>MealLavish</defName>
 		<label>Lavish Meal</label>
 		<description>An elborate concoction of food skillfully prepared into a succulent meal.</description>
 		<graphicData>
-			<texPath>Things/Item/Meal/Meal_Lavish</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
+			<texPath>Things/Item/Meal/Lavish</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<statBases>
 			<DeteriorationRate>10</DeteriorationRate>
@@ -319,24 +185,30 @@
 			<WorkToMake>800</WorkToMake>
 			<Bulk>1.50</Bulk>
 			<Mass>1.20</Mass>
+			<Nutrition>1</Nutrition>
 		</statBases>
 		<ingestible>
 			<preferability>MealLavish</preferability>
 			<tasteThought>AteLavishMeal</tasteThought>
-			<nutrition>1.00</nutrition>
 			<ingestEffect>EatVegetarian</ingestEffect>
 			<ingestSound>Meal_Eat</ingestSound>
 		</ingestible>
+		<comps>
+			<li Class="CompProperties_Rottable">
+				<daysToRotStart>4</daysToRotStart>
+				<rotDestroys>true</rotDestroys>
+			</li>
+		</comps>
 	</ThingDef>
 
 
-	<ThingDef ParentName="MealRottable">
+	<ThingDef ParentName="SK_MealBase">
 		<defName>MealLuxury</defName>
 		<label>Luxury Meal</label>
 		<description>A masterpiece of the culinary arts, this meal nourishes the body, mind, and soul.</description>
 		<graphicData>
-			<texPath>Things/Item/Meal/Meal_Lavish</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
+			<texPath>Things/Item/Meal/Lavish</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<statBases>
 			<DeteriorationRate>10</DeteriorationRate>
@@ -344,24 +216,30 @@
 			<WorkToMake>800</WorkToMake>
 			<Bulk>1.50</Bulk>
 			<Mass>1.20</Mass>
+			<Nutrition>1</Nutrition>
 		</statBases>
 		<ingestible>
 			<preferability>MealLavish</preferability>
-			<nutrition>1.00</nutrition>
 			<tasteThought>AteLuxuryMeal</tasteThought>
 			<ingestEffect>EatVegetarian</ingestEffect>
 			<ingestSound>Meal_Eat</ingestSound>
 		</ingestible>
+		<comps>
+			<li Class="CompProperties_Rottable">
+				<daysToRotStart>4</daysToRotStart>
+				<rotDestroys>true</rotDestroys>
+			</li>
+		</comps>
 	</ThingDef>
 
 
-	<ThingDef ParentName="MealRottable">
+	<ThingDef ParentName="SK_MealBase">
 		<defName>MealSalad</defName>
 		<label>Fruit Salad</label>
 		<description>A fruit salad made from gathered fruit.</description>
 		<graphicData>
-			<texPath>Things/Item/Meal/Meal_Salad</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
+			<texPath>Things/Item/Meal/SaladSimple</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<statBases>
 			<DeteriorationRate>10</DeteriorationRate>
@@ -369,23 +247,28 @@
 			<WorkToMake>300</WorkToMake>
 			<Bulk>1.50</Bulk>
 			<Mass>1.20</Mass>
+			<Nutrition>0.6</Nutrition>
 		</statBases>
 		<ingestible>
 			<preferability>MealSimple</preferability>
-			<nutrition>0.60</nutrition>
 			<ingestEffect>EatVegetarian</ingestEffect>
 			<ingestSound>Meal_Eat</ingestSound>
 		</ingestible>
-		<stackLimit>10</stackLimit>
+		<comps>
+			<li Class="CompProperties_Rottable">
+				<daysToRotStart>5</daysToRotStart>
+				<rotDestroys>true</rotDestroys>
+			</li>
+		</comps>
 	</ThingDef>
 
 
-	<ThingDef ParentName="MealBase">
+	<ThingDef ParentName="SK_MealBase">
 		<defName>MealJerky</defName>
 		<label>Jerky</label>
 		<description>Jerky made from raw meat.Max 5 eaten at a time.</description>
 		<graphicData>
-			<texPath>Things/Item/Meal/Meal_Jerky</texPath>
+			<texPath>Things/Item/Meal/grilledmeat</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<statBases>
@@ -394,11 +277,11 @@
 			<WorkToMake>300</WorkToMake>
 			<Bulk>0.25</Bulk>
 			<Mass>0.15</Mass>
+			<Nutrition>0.15</Nutrition>
 		</statBases>
 		<stackLimit>25</stackLimit>
 		<ingestible>
 			<preferability>MealSimple</preferability>
-			<nutrition>0.15</nutrition>
 			<maxNumToIngestAtOnce>5</maxNumToIngestAtOnce>
 			<ingestEffect>EatMeat</ingestEffect>
 			<ingestSound>Meal_Eat</ingestSound>
@@ -413,12 +296,12 @@
 	</ThingDef>
 
 
-	<ThingDef ParentName="MealBase">
+	<ThingDef ParentName="SK_MealBase">
 		<defName>RoastedMeat</defName>
 		<label>Roasted Meat</label>
 		<description>Freshly roasted meat.</description>
 		<graphicData>
-			<texPath>Things/Item/Meal/RoastedMeat</texPath>
+			<texPath>Things/Item/Meal/Grilledsteak</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<statBases>
@@ -426,12 +309,12 @@
 			<MarketValue>12</MarketValue>
 			<WorkToMake>200</WorkToMake>
 			<Bulk>1.5</Bulk>
-			<Mass>1.2</Mass>				
+			<Mass>1.2</Mass>
+			<Nutrition>0.7</Nutrition>
 		</statBases>
 		<stackLimit>10</stackLimit>
 		<ingestible>
 			<preferability>MealSimple</preferability>
-			<nutrition>0.70</nutrition>
 			<ingestEffect>EatMeat</ingestEffect>
 			<ingestSound>Meal_Eat</ingestSound>
 		</ingestible>
@@ -443,51 +326,58 @@
 		</comps>
 	</ThingDef>
 
-	<ThingDef ParentName="MealRottable">
+	<ThingDef ParentName="SK_MealBase">
 		<defName>FriedVegetables</defName>
 		<label>Fried Assorts</label>
 		<description>A simple fried assortment of vegetables. Not too nutritious or tasty.</description>
 		<graphicData>
 			<texPath>Things/Item/Meal/FriedVegetables</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
+			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<statBases>
 			<DeteriorationRate>10</DeteriorationRate>
 			<MarketValue>11</MarketValue>
 			<WorkToMake>200</WorkToMake>
 			<Bulk>1.0</Bulk>
-			<Mass>0.7</Mass>	
+			<Mass>0.7</Mass>
+			<Nutrition>0.45</Nutrition>
 		</statBases>
 		<stackLimit>10</stackLimit>
 		<ingestible>
 			<foodType>Meal, Processed</foodType>
 			<preferability>MealSimple</preferability>
-			<nutrition>0.45</nutrition>
 			<ingestEffect>EatVegetarian</ingestEffect>
 			<ingestSound>Meal_Eat</ingestSound>
 		</ingestible>
+		<comps>
+			<li Class="CompProperties_Rottable">
+				<daysToRotStart>7</daysToRotStart>
+				<rotDestroys>true</rotDestroys>
+			</li>
+		</comps>
 	</ThingDef>
 
-	<ThingDef ParentName="MealRottable">
+	<ThingDef ParentName="SK_MealBase">
 		<defName>BakedPotato</defName>
 		<label>Baked Potato</label>
-		<description>Baked Potato.</description>
+		<description>A baked Potato. At least it's not raw.</description>
 		<graphicData>
 			<texPath>Things/Item/Meal/Baked_Potato</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<statBases>
 			<DeteriorationRate>10</DeteriorationRate>
-			<MarketValue>5</MarketValue>
+			<MarketValue>1.5</MarketValue>
 			<WorkToMake>300</WorkToMake>
-			<Bulk>1.50</Bulk>
+			<Bulk>1.0</Bulk>
 			<Mass>0.3</Mass>
+			<Nutrition>0.07</Nutrition>
 		</statBases>
 		<stackLimit>75</stackLimit>
 		<ingestible>
 			<foodType>Meal, Processed</foodType>
 			<preferability>MealSimple</preferability>
-			<nutrition>0.30</nutrition>
+			<maxNumToIngestAtOnce>10</maxNumToIngestAtOnce>
 			<ingestEffect>EatVegetarian</ingestEffect>
 			<ingestSound>Meal_Eat</ingestSound>
 		</ingestible>

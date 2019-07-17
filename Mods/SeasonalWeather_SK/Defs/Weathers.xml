@@ -9,7 +9,7 @@
     <favorability>Neutral</favorability>
     <perceivePriority>1</perceivePriority>
     <ambientSounds>
-      <li>AmbientWind_Storm</li>
+      <li>Ambient_Wind_Storm</li>
     </ambientSounds>
     <windSpeedFactor>1e12</windSpeedFactor><!--This forces windy-->
     <accuracyMultiplier>0.6</accuracyMultiplier>
@@ -44,11 +44,15 @@
     <defName>Cloudy</defName>
     <label>cloudy</label>
     <description>A cloudy day, lowers brightness.</description>
+    <temperatureRange>
+      <min>-20</min>
+      <max>25</max>
+    </temperatureRange>
     <repeatable>true</repeatable>
     <favorability>Good</favorability>
     <perceivePriority>0</perceivePriority>
     <ambientSounds>
-      <li>AmbientWind_Clear</li>
+      <li>Ambient_Wind_Clear</li>
     </ambientSounds>
     <!-- Colors are Overcast -->
      <skyColorsDay>
@@ -82,7 +86,7 @@
     <label>fog snow</label>
     <description>Snow reduces the accuracy of ranged weapons, extinguishes fire, and slows people down, fog reduces sight.</description>
     <temperatureRange>
-      <min>-999</min>
+      <min>-7</min>
       <max>-0.5</max>
     </temperatureRange>
     <snowRate>1.2</snowRate>
@@ -103,7 +107,7 @@
       </points>
     </commonalityRainfallFactor>
     <ambientSounds>
-      <li>AmbientWind_Storm</li>
+      <li>Ambient_Wind_Storm</li>
     </ambientSounds>
     <!-- Colors are Overcast -->
     <skyColorsDay>
@@ -141,7 +145,7 @@
     <favorability>Neutral</favorability>
     <perceivePriority>1</perceivePriority>
     <ambientSounds>
-      <li>AmbientWind_Fog</li>
+      <li>Ambient_Wind_Fog</li>
     </ambientSounds>
     <overlayClasses>
       <li>SeasonalWeather.WeatherOverlay_DustCloud</li>
@@ -199,7 +203,7 @@
     <favorability>VeryBad</favorability>
     <perceivePriority>2</perceivePriority>
     <ambientSounds>
-      <li>AmbientWind_Storm</li>
+      <li>Ambient_Wind_Storm</li>
     </ambientSounds>
     <overlayClasses>
       <li>SeasonalWeather.WeatherOverlay_DustCloud</li>
@@ -258,7 +262,7 @@
     <perceivePriority>1</perceivePriority>
     <rainRate>0.01</rainRate>
     <ambientSounds>
-      <li>AmbientWind_Clear</li>
+      <li>Ambient_Wind_Clear</li>
     </ambientSounds>
     <!-- Colors are Clear -->
     <skyColorsDay>
